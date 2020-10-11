@@ -1,6 +1,7 @@
 # **Musixmatch scraper**
 A script that scrapes lyrics of the popular music lyrics site [Musixmatch](https://www.musixmatch.com/), written entirely in python.
 
+![GitHub](https://img.shields.io/github/license/podato/musixmatch-scraper?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/podato/musixmatch-scraper?style=for-the-badge)
 
 ## Features:
