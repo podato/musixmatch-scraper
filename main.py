@@ -2,7 +2,6 @@
 #By https://github.com/podato
 import requests
 import sys
-import re
 from bs4 import BeautifulSoup
 
 
