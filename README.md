@@ -6,6 +6,7 @@ A script that scrapes lyrics of the popular music lyrics site [Musixmatch](https
 
 ## Features:
 * Shell arguments
+* Multi-language support
 * Clean-ish code :)
 
 ## Usage:
