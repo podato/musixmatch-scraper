@@ -30,20 +30,17 @@ soup = BeautifulSoup(page.content, 'html.parser')
 print("Filtering")
 lco = soup.findAll(class_="lyrics__content__ok", text=True)
 if len(lco) > 0:
-    lyrics = ""
-    for result in lco:
-        lyrics += result.get_text() + "\n"
-    lyrics = lyrics[:-1]
+    lyrics = "\n".join(x.text for x in lco)
 else:
     lyrics = soup.find(class_="lyrics__content__warning", text=True).get_text()
-title = soup.find('title').get_text()[:-20]
-for char in ['<', '>', ':', '"', '/', '\\', '|', '?', '*']:
-    title = title.replace(char, "")
+raw_title = soup.find('title').get_text()[:-20]
 
 print("Writing to file")
+for char in ['<', '>', ':', '"', '/', '\\', '|', '?', '*']:
+    title = raw_title.replace(char, "")
 with open(out.format(title=title), "w", encoding='utf8') as f:
     f.write(lyrics)
 
 print(f'''
-Successfully scraped the lyrics of: {title}
+Successfully scraped the lyrics of: {raw_title}
 and saved to: {title}.txt''')
